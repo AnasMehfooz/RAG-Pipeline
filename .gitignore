@@ -3,3 +3,6 @@
 __pycache__/
 *.pyc
 .env
+
+# Built locally by the notebook; contains the full text of indexed documents
+data/vector_store/
