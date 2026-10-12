@@ -40,11 +40,13 @@ LLM backends used in the notebook:
 | Groq | `llama-3.1-8b-instant` | `langchain-groq` |
 | Anthropic | `claude-fable-5` | `langchain-anthropic` |
 
-## Current index
+## Building the index
 
-The committed vector store holds **480 chunks** from **2 PDFs (170 pages)** of university course material on database modeling and database systems. Queries should be about that domain, for example *"What is a primary key?"* or *"Explain normalization"*. Off-topic questions (such as the *"what is encoder decoder?"* example in the notebook) correctly retrieve nothing above the 0.5 threshold, and the LLM then answers without context.
+The vector store is not committed: `data/vector_store/` is created locally the first time you run the ingestion cells, and it is git-ignored because it stores the full text of every indexed chunk.
 
-To index your own documents, put PDFs in `data/pdfs/`, delete `data/vector_store/`, and re-run the ingestion cells.
+Put the PDFs you want to search in `data/pdfs/` and run the **Ingestion Pipeline** and **Embedding** sections. Ask questions about those documents. An off-topic question correctly retrieves nothing above the 0.5 similarity threshold, and the LLM then answers without context, which is what happened with the *"what is encoder decoder?"* example in the notebook.
+
+To re-index from scratch, delete `data/vector_store/` and re-run the ingestion cells (each run otherwise appends new chunks).
 
 ## Hardware
 
@@ -79,7 +81,7 @@ RAG-Pipeline/
 ├── RAG_pipeline.ipynb     Full pipeline
 ├── data/
 │   ├── pdfs/              Source documents that get indexed
-│   ├── vector_store/      Persisted ChromaDB index (480 chunks)
+│   ├── vector_store/      ChromaDB index, built locally (git-ignored)
 │   └── research2.pdf      RAG survey paper (Gao et al.), not indexed
 └── README.md
 ```
