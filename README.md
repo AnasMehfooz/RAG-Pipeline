@@ -44,7 +44,7 @@ LLM backends used in the notebook:
 
 The vector store is not committed: `data/vector_store/` is created locally the first time you run the ingestion cells, and it is git-ignored because it stores the full text of every indexed chunk.
 
-Put the PDFs you want to search in `data/pdfs/` and run the **Ingestion Pipeline** and **Embedding** sections. Ask questions about those documents. An off-topic question correctly retrieves nothing above the 0.5 similarity threshold, and the LLM then answers without context, which is what happened with the *"what is encoder decoder?"* example in the notebook.
+The repository ships with one sample document, [*Retrieval-Augmented Generation for Large Language Models: A Survey*](https://arxiv.org/abs/2312.10997) (Gao et al., 2023), in `data/pdfs/`. After running the **Ingestion Pipeline** and **Embedding** sections, try questions such as *"What is the difference between naive, advanced and modular RAG?"* or *"How is RAG evaluated?"*. To search your own documents, add PDFs to the same folder. An off-topic question correctly retrieves nothing above the 0.5 similarity threshold, and the LLM then answers without context, which is what happened with the *"what is encoder decoder?"* example in the notebook.
 
 To re-index from scratch, delete `data/vector_store/` and re-run the ingestion cells (each run otherwise appends new chunks).
 
@@ -80,9 +80,9 @@ Run the **Ingestion Pipeline** and **Embedding** sections once to build the inde
 RAG-Pipeline/
 ├── RAG_pipeline.ipynb     Full pipeline
 ├── data/
-│   ├── pdfs/              Source documents that get indexed
-│   ├── vector_store/      ChromaDB index, built locally (git-ignored)
-│   └── research2.pdf      RAG survey paper (Gao et al.), not indexed
+│   ├── pdfs/
+│   │   └── rag_survey.pdf Sample document: RAG survey (Gao et al., 2023)
+│   └── vector_store/      ChromaDB index, built locally (git-ignored)
 └── README.md
 ```
 
