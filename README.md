@@ -44,7 +44,9 @@ LLM backends used in the notebook:
 
 The vector store is not committed: `data/vector_store/` is created locally the first time you run the ingestion cells, and it is git-ignored because it stores the full text of every indexed chunk.
 
-The repository ships with one sample document, [*Retrieval-Augmented Generation for Large Language Models: A Survey*](https://arxiv.org/abs/2312.10997) (Gao et al., 2023), in `data/pdfs/`. After running the **Ingestion Pipeline** and **Embedding** sections, try questions such as *"What is the difference between naive, advanced and modular RAG?"* or *"How is RAG evaluated?"*. To search your own documents, add PDFs to the same folder. An off-topic question correctly retrieves nothing above the 0.5 similarity threshold, and the LLM then answers without context, which is what happened with the *"what is encoder decoder?"* example in the notebook.
+The repository ships with one sample document, [*Retrieval-Augmented Generation for Large Language Models: A Survey*](https://arxiv.org/abs/2312.10997) (Gao et al., 2023), in `data/pdfs/`. After running the **Ingestion Pipeline** and **Embedding** sections, try questions such as *"What is the difference between naive, advanced and modular RAG?"* or *"How is RAG evaluated?"*. To search your own documents, add PDFs to the same folder.
+
+The outputs saved in the notebook come from an earlier index of database course material. That is why the *"what is encoder decoder?"* example retrieved no chunks above the 0.5 similarity threshold and the LLM answered without context. Re-run the notebook to get outputs for the current document.
 
 To re-index from scratch, delete `data/vector_store/` and re-run the ingestion cells (each run otherwise appends new chunks).
 
