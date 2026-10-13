@@ -1,8 +1,0 @@
-html,body{margin:0;height:100%;background:#0b0e14;color:#e6e6e6;font-family:system-ui,sans-serif;overflow:hidden}
-body{display:flex;flex-direction:column;align-items:center;justify-content:center}
-canvas{display:block;background:#000;border:1px solid #333}
-.hint{position:fixed;bottom:6px;margin:0;font-size:12px;opacity:.5}
-.status{position:fixed;top:0;left:0;right:0;text-align:center;padding:6px;font-size:14px;z-index:2}
-.status.connecting{background:#8a6d00}
-.status.connected{background:#1b6b2f;opacity:0;transition:opacity 1.5s .8s}
-.status.disconnected{background:#9b1c1c}
