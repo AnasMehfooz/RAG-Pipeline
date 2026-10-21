@@ -1,0 +1,4 @@
+node_modules
+dist
+# Optional local copy of the embedding model for offline development
+public/models
