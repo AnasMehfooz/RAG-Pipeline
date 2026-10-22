@@ -1,0 +1,14 @@
+# Core pipeline (RAG_pipeline.ipynb)
+langchain-core
+langchain-community
+langchain-text-splitters
+langchain-openai
+langchain-groq
+langchain-anthropic
+chromadb
+pypdf
+sentence-transformers
+# For GPU embeddings, install the CUDA build of PyTorch first: https://pytorch.org/get-started/locally/
+torch
+# Running the notebook
+jupyterlab

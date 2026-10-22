@@ -91,15 +91,23 @@ source .venv/bin/activate
 
 ### 3. Install requirements
 ```bash
-pip install langchain-core langchain-community langchain-text-splitters langchain-openai langchain-groq langchain-anthropic chromadb pypdf sentence-transformers torch
+pip install -r requirements.txt
 ```
+For GPU embeddings, install the CUDA build of PyTorch first ([pytorch.org](https://pytorch.org/get-started/locally/)).
 
 ### 4. Set your API keys
-Only the providers you want to try are needed. Set them in your shell or a `.env` file:
-```env
-OPENAI_API_KEY=your_openai_api_key_here
-GROQ_API_KEY=your_groq_api_key_here
-ANTHROPIC_API_KEY=your_anthropic_api_key_here
+Only the providers you want to try are needed. The notebook reads them from environment variables, so set them in the shell you start Jupyter from:
+```bash
+# macOS / Linux
+export OPENAI_API_KEY=your_openai_api_key_here
+export GROQ_API_KEY=your_groq_api_key_here
+export ANTHROPIC_API_KEY=your_anthropic_api_key_here
+```
+```powershell
+# Windows PowerShell
+$env:OPENAI_API_KEY="your_openai_api_key_here"
+$env:GROQ_API_KEY="your_groq_api_key_here"
+$env:ANTHROPIC_API_KEY="your_anthropic_api_key_here"
 ```
 
 ### 5. Run the notebook
@@ -140,7 +148,15 @@ Pushing changes under `site/` to `main` deploys it through `.github/workflows/pa
 
 ---
 
+## 📄 License
+
+Code: MIT, see [LICENSE](LICENSE). `data/pdfs/rag_survey.pdf` is a third-party paper included as sample input; it is not covered by the MIT license.
+
+---
+
 ## 👤 Author
 
 **Anas Mehfooz**
 - GitHub: [@AnasMehfooz](https://github.com/AnasMehfooz)
+
+Built with AI pair programming (Claude).
